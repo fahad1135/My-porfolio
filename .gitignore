@@ -15,6 +15,9 @@ yarn-error.log
 .pnp
 .pnp.js
 
+# Claude Code dev tooling
+.claude/
+
 # Editor directories
 .vscode/
 .idea/
