@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fahad Majeed — Video Editor & Content Creator. Crafting stories that move people." />
+  <title>Fahad Majeed | Video Editor & Content Creator</title>
+
+  <!-- Google Fonts: loaded here, applied in Phase 3 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">FM<span class="dot">.</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section id="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Video Editor &amp; Content Creator</p>
+        <h1 class="hero-name">Fahad<br />Majeed<span class="dot">.</span></h1>
+        <p class="hero-tagline">I turn raw footage into stories that move people.</p>
+        <div class="hero-cta-group">
+          <a href="#work" class="btn btn-primary">See My Work</a>
+          <a href="#contact" class="btn btn-ghost">Hire Me</a>
+        </div>
+      </div>
+
+      <!-- Showreel video embed area -->
+      <div class="hero-showreel">
+        <div class="showreel-wrapper">
+          <div class="showreel-placeholder">
+            <!-- Replace src with your YouTube/Vimeo embed URL -->
+            <iframe
+              src="about:blank"
+              data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=0&rel=0"
+              title="Showreel"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div class="showreel-overlay">
+              <div class="play-btn" aria-label="Play showreel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+              <p>Showreel 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WORK / PROJECT GALLERY
+    ============================================================ -->
+    <section id="work">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">Projects</h2>
+        </div>
+
+        <!-- Category filter tabs -->
+        <div class="gallery-filters reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="social">Social Media</button>
+          <button class="filter-btn" data-filter="documentary">Documentary</button>
+          <button class="filter-btn" data-filter="music">Music Video</button>
+        </div>
+
+        <!-- Gallery grid -->
+        <div class="gallery-grid">
+
+          <article class="gallery-item reveal" data-category="commercial">
+            <div class="gallery-thumb">
+              <div class="thumb-placeholder"></div>
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Commercial</span>
+                <h3 class="gallery-item-title">Brand Campaign — Nike</h3>
+                <p class="gallery-item-desc">30-second TVC edit for global launch</p>
+                <a href="#" class="gallery-link" aria-label="View Nike project">View Project →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="social">
+            <div class="gallery-thumb">
+              <div class="thumb-placeholder"></div>
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Social Media</span>
+                <h3 class="gallery-item-title">Viral Reel Series</h3>
+                <p class="gallery-item-desc">12-part Instagram series, 2M+ views</p>
+                <a href="#" class="gallery-link" aria-label="View Reel Series project">View Project →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="documentary">
+            <div class="gallery-thumb">
+              <div class="thumb-placeholder"></div>
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Documentary</span>
+                <h3 class="gallery-item-title">Unseen Karachi</h3>
+                <p class="gallery-item-desc">Short documentary, 22 mins</p>
+                <a href="#" class="gallery-link" aria-label="View Unseen Karachi project">View Project →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="music">
+            <div class="gallery-thumb">
+              <div class="thumb-placeholder"></div>
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Music Video</span>
+                <h3 class="gallery-item-title">Echoes — Official MV</h3>
+                <p class="gallery-item-desc">Cinematic music video, full production</p>
+                <a href="#" class="gallery-link" aria-label="View Echoes project">View Project →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="commercial">
+            <div class="gallery-thumb">
+              <div class="thumb-placeholder"></div>
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Commercial</span>
+                <h3 class="gallery-item-title">Product Launch — OPPO</h3>
+                <p class="gallery-item-desc">60-second product reveal video</p>
+                <a href="#" class="gallery-link" aria-label="View OPPO project">View Project →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal" data-category="social">
+            <div class="gallery-thumb">
+              <div class="thumb-placeholder"></div>
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Social Media</span>
+                <h3 class="gallery-item-title">YouTube Channel Rebrand</h3>
+                <p class="gallery-item-desc">Full visual identity + 20 videos</p>
+                <a href="#" class="gallery-link" aria-label="View YouTube Rebrand project">View Project →</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.gallery-grid -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section id="about">
+      <div class="container about-grid">
+
+        <div class="about-text reveal">
+          <p class="section-label">About Me</p>
+          <h2 class="section-title">The Editor<br />Behind the Frame</h2>
+          <p class="about-bio">
+            I'm Fahad Majeed — a video editor and content creator based in Pakistan with a passion for
+            visual storytelling. With years of experience cutting everything from fast-paced social media
+            content to long-form documentaries, I bring a sharp eye for pacing, emotion, and narrative
+            clarity to every project I touch.
+          </p>
+          <p class="about-bio">
+            When I'm not in the edit suite, I'm studying cinematography, music, and design — because
+            the best editors understand every craft that feeds into the frame.
+          </p>
+          <a href="#contact" class="btn btn-primary">Work With Me</a>
+        </div>
+
+        <div class="about-aside reveal">
+          <!-- Tools & Software -->
+          <div class="tools-block">
+            <h3 class="tools-title">Tools I Use</h3>
+            <ul class="tools-list">
+              <li class="tool-item">
+                <span class="tool-icon">🎬</span>
+                <span>Adobe Premiere Pro</span>
+              </li>
+              <li class="tool-item">
+                <span class="tool-icon">✨</span>
+                <span>Adobe After Effects</span>
+              </li>
+              <li class="tool-item">
+                <span class="tool-icon">🎨</span>
+                <span>DaVinci Resolve</span>
+              </li>
+              <li class="tool-item">
+                <span class="tool-icon">🔊</span>
+                <span>Adobe Audition</span>
+              </li>
+              <li class="tool-item">
+                <span class="tool-icon">📦</span>
+                <span>Adobe Media Encoder</span>
+              </li>
+              <li class="tool-item">
+                <span class="tool-icon">🖼️</span>
+                <span>Adobe Photoshop</span>
+              </li>
+              <li class="tool-item">
+                <span class="tool-icon">⚡</span>
+                <span>CapCut Pro</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-block">
+            <div class="stat-item reveal">
+              <span class="stat-number" data-target="150">0</span><span class="stat-unit">+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-item reveal">
+              <span class="stat-number" data-target="5">0</span><span class="stat-unit">+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item reveal">
+              <span class="stat-number" data-target="40">0</span><span class="stat-unit">+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+    ============================================================ -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">What I Do</p>
+          <h2 class="section-title">Services</h2>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">✂️</div>
+            <h3 class="service-name">Video Editing</h3>
+            <p class="service-desc">
+              Precision cuts, dynamic pacing, and storytelling-first editing for commercials,
+              documentaries, vlogs, and branded content.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">🎨</div>
+            <h3 class="service-name">Color Grading</h3>
+            <p class="service-desc">
+              Professional color correction and cinematic grading in DaVinci Resolve to give
+              your footage a signature look and feel.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">💥</div>
+            <h3 class="service-name">Motion Graphics</h3>
+            <p class="service-desc">
+              Custom titles, lower thirds, transitions, and animated graphics built in
+              After Effects to elevate your visual brand.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">📱</div>
+            <h3 class="service-name">Social Media Content</h3>
+            <p class="service-desc">
+              Short-form vertical and horizontal edits optimized for Instagram Reels,
+              TikTok, YouTube Shorts, and beyond.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">🎵</div>
+            <h3 class="service-name">Sound Design</h3>
+            <p class="service-desc">
+              Music sync, SFX layering, voiceover mixing, and audio cleanup to make
+              your videos sound as good as they look.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">🎬</div>
+            <h3 class="service-name">YouTube Production</h3>
+            <p class="service-desc">
+              End-to-end YouTube channel setup and ongoing editing: thumbnails, intro
+              animations, chapters, and SEO-ready exports.
+            </p>
+          </div>
+
+        </div><!-- /.services-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS SECTION
+    ============================================================ -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">Kind Words</p>
+          <h2 class="section-title">What Clients Say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <blockquote class="testimonial-card reveal">
+            <p class="testimonial-text">
+              "Fahad has an incredible eye for pacing. Our brand video went viral and
+              he was a massive part of why it landed so well. Highly recommended."
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">AK</div>
+              <div>
+                <strong>Ahmed Khan</strong>
+                <span>Marketing Director, BrandX</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal">
+            <p class="testimonial-text">
+              "Working with Fahad felt effortless. He understood our vision immediately
+              and delivered beyond expectations — on time and on budget."
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">SR</div>
+              <div>
+                <strong>Sara Rizvi</strong>
+                <span>YouTuber &amp; Content Strategist</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal">
+            <p class="testimonial-text">
+              "The color grading Fahad did for our music video was cinematic. We've
+              gotten so many compliments and keep coming back for every release."
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">ZA</div>
+              <div>
+                <strong>Zain Ali</strong>
+                <span>Independent Artist</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div><!-- /.testimonials-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+    ============================================================ -->
+    <section id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-intro reveal">
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-title">Let's Build<br />Something Great</h2>
+          <p class="contact-sub">
+            Have a project in mind? Send me a message and I'll get back to you within 24 hours.
+          </p>
+
+          <!-- Social links -->
+          <ul class="social-links">
+            <li>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-2-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.4 3 12 3 12 3s-4.4 0-6.8.1c-.6 0-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.3.3 4.3s.3 2 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.6 12 21.7 12 21.7s4.4 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.7 1.2-2.7 1.2-2.7s.3-2.1.3-4.3v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l6.5 3.6-6.5 3.5z"/></svg>
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="mailto:sohailahmadabbasi@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email Me
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact-form reveal" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="project-type">Project Type</label>
+            <select id="project-type" name="project-type">
+              <option value="" disabled selected>Select a service...</option>
+              <option value="video-editing">Video Editing</option>
+              <option value="color-grading">Color Grading</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="social-media">Social Media Content</option>
+              <option value="youtube">YouTube Production</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Me About Your Project</label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe your project, timeline, and budget..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+
+      </div><!-- /.container -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <a href="#hero" class="nav-logo">FM<span class="dot">.</span></a>
+      <p class="footer-copy">&copy; 2024 Fahad Majeed. All rights reserved.</p>
+      <a href="#hero" class="back-to-top" aria-label="Back to top">↑ Top</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
