@@ -168,34 +168,6 @@
 })();
 
 /* ============================================================
-   SHOWREEL — clicking the overlay loads the iframe
-============================================================ */
-(function initShowreel() {
-  const wrapper = document.querySelector('.showreel-wrapper');
-  const overlay = document.querySelector('.showreel-overlay');
-  const iframe  = document.querySelector('.showreel-placeholder iframe');
-
-  if (!wrapper || !overlay || !iframe) return;
-
-  function loadVideo() {
-    const src = iframe.dataset.src;
-    if (!src || src === 'about:blank') {
-      // No video URL set yet — do nothing
-      return;
-    }
-    // Append autoplay param and set src
-    iframe.src = src.includes('?')
-      ? src + '&autoplay=1'
-      : src + '?autoplay=1';
-
-    overlay.style.display = 'none';
-    wrapper.removeEventListener('click', loadVideo);
-  }
-
-  wrapper.addEventListener('click', loadVideo);
-})();
-
-/* ============================================================
    CONTACT FORM — validation + simulated submit
 ============================================================ */
 (function initContactForm() {
