@@ -294,6 +294,75 @@ section {
   position: relative;
 }
 
+/* Full-bleed ambient background container */
+.hero-ambient {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Soft ambient glow orbs */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.glow-primary {
+  width: min(550px, 85vw);
+  height: min(550px, 85vw);
+  top: 10%;
+  right: 5%;
+  background: radial-gradient(circle, rgba(255, 61, 0, 0.15) 0%, rgba(255, 61, 0, 0.04) 50%, transparent 70%);
+  animation: ambientDriftPrimary 16s ease-in-out infinite alternate;
+}
+
+.glow-secondary {
+  width: min(480px, 80vw);
+  height: min(480px, 80vw);
+  bottom: 5%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(255, 120, 40, 0.09) 0%, rgba(255, 61, 0, 0.02) 50%, transparent 70%);
+  animation: ambientDriftSecondary 20s ease-in-out infinite alternate;
+}
+
+/* Subtle cinematic dot grid texture */
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 80%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Canvas for floating ember particles */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-content,
+.hero-portrait,
+.scroll-hint {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-content {
   padding-top: 6rem;
   animation: heroFadeIn 1s var(--ease) both;
@@ -426,24 +495,87 @@ section {
   border-color: var(--clr-accent);
 }
 
+.gallery-group {
+  margin-bottom: var(--space-xl);
+}
+.gallery-group:last-child {
+  margin-bottom: 0;
+}
+.gallery-group.hidden {
+  display: none;
+}
+
+.gallery-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.gallery-group-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  letter-spacing: 0.02em;
+}
+
+.gallery-group-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+/* Dual-Grid Layout */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Shorts Grid: 4 columns side-by-side on desktop */
+.grid-shorts {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/* Long-Form Grid: 2 columns widescreen on desktop */
+.grid-longform {
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
 .gallery-item {
   border-radius: var(--radius-md);
   overflow: hidden;
+  position: relative;
+}
+
+.gallery-item.hidden {
+  display: none;
 }
 
 .gallery-thumb {
   position: relative;
-  aspect-ratio: 16/9;
   background: var(--clr-surface);
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
+  width: 100%;
+}
+
+/* Shorts: 9:16 vertical portrait aspect ratio */
+.grid-shorts .gallery-thumb,
+.gallery-item[data-category="shorts"] .gallery-thumb {
+  aspect-ratio: 9 / 16;
+}
+
+/* Long-Form: 16:9 widescreen aspect ratio */
+.grid-longform .gallery-thumb,
+.gallery-item[data-category="long-form"] .gallery-thumb {
+  aspect-ratio: 16 / 9;
 }
 
 .thumb-placeholder {
@@ -461,6 +593,63 @@ section {
   justify-content: center;
   font-size: 2rem;
   color: var(--clr-text-dim);
+}
+
+/* Gallery Video & Play Interaction */
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+}
+
+.video-thumb-wrap {
+  position: relative;
+}
+
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.4);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.gallery-thumb:hover .play-btn {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px rgba(255, 61, 0, 0.6);
+}
+
+.play-btn svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+  color: var(--clr-white);
+}
+
+/* Hide overlays while video is playing so native controls work smoothly */
+.video-thumb-wrap.is-playing .gallery-overlay,
+.video-thumb-wrap.is-playing .video-play-overlay {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .gallery-overlay {
@@ -507,6 +696,17 @@ section {
 }
 .gallery-link:hover {
   text-decoration: underline;
+}
+.gallery-link.play-trigger-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 /* Hidden items when filtering */
@@ -912,6 +1112,15 @@ section {
     margin-inline: auto;
   }
 
+  .grid-shorts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .grid-longform {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -959,9 +1168,34 @@ section {
     color: var(--clr-text);
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  .grid-shorts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
+  .grid-shorts .gallery-overlay {
+    padding: 0.85rem;
+  }
+  .grid-shorts .gallery-item-title {
+    font-size: 0.95rem;
+  }
+  .grid-shorts .gallery-item-desc {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .grid-shorts .play-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-shorts .play-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .grid-longform {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }

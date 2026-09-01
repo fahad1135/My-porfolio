@@ -41,6 +41,14 @@
          HERO SECTION
     ============================================================ -->
     <section id="hero">
+      <!-- Ambient Interactive Background -->
+      <div class="hero-ambient" aria-hidden="true">
+        <div class="ambient-glow glow-primary"></div>
+        <div class="ambient-glow glow-secondary"></div>
+        <div class="ambient-grid"></div>
+        <canvas id="hero-particles" class="hero-canvas"></canvas>
+      </div>
+
       <div class="hero-content">
         <p class="hero-eyebrow">Video Editor &amp; Content Creator</p>
         <h1 class="hero-name">Fahad<br />Majeed<span class="dot">.</span></h1>
@@ -82,88 +90,178 @@
         <!-- Category filter tabs -->
         <div class="gallery-filters reveal">
           <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="commercial">Commercial</button>
-          <button class="filter-btn" data-filter="social">Social Media</button>
-          <button class="filter-btn" data-filter="documentary">Documentary</button>
-          <button class="filter-btn" data-filter="music">Music Video</button>
+          <button class="filter-btn" data-filter="shorts">Shorts</button>
+          <button class="filter-btn" data-filter="long-form">Long-Form</button>
         </div>
 
-        <!-- Gallery grid -->
-        <div class="gallery-grid">
+        <!-- Shorts & Vertical Reels Group (4 columns 9:16 portrait) -->
+        <div class="gallery-group" data-category="shorts">
+          <div class="gallery-group-header reveal">
+            <h3 class="gallery-group-title">Shorts &amp; Vertical Content</h3>
+            <span class="gallery-group-count">9:16 Format</span>
+          </div>
+          <div class="gallery-grid grid-shorts">
 
-          <article class="gallery-item reveal" data-category="commercial">
-            <div class="gallery-thumb">
-              <div class="thumb-placeholder"></div>
-              <div class="gallery-overlay">
-                <span class="gallery-tag">Commercial</span>
-                <h3 class="gallery-item-title">Brand Campaign — Nike</h3>
-                <p class="gallery-item-desc">30-second TVC edit for global launch</p>
-                <a href="#" class="gallery-link" aria-label="View Nike project">View Project →</a>
+            <article class="gallery-item gallery-video-item reveal" data-category="shorts">
+              <div class="gallery-thumb video-thumb-wrap">
+                <video
+                  class="gallery-video"
+                  preload="metadata"
+                  playsinline
+                >
+                  <source src="assets/videos/sfx-reel.mp4" type="video/mp4" />
+                  <source src="assets/videos/sfx reel.mov" type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-play-overlay" aria-hidden="true">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                  </div>
+                </div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Shorts</span>
+                  <h3 class="gallery-item-title">Social Media Reel</h3>
+                  <p class="gallery-item-desc">Fast-paced SFX, sound design &amp; dynamic pacing reel</p>
+                  <button type="button" class="gallery-link play-trigger-link" aria-label="Watch Social Media Reel">Watch Reel ▶</button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="gallery-item reveal" data-category="social">
-            <div class="gallery-thumb">
-              <div class="thumb-placeholder"></div>
-              <div class="gallery-overlay">
-                <span class="gallery-tag">Social Media</span>
-                <h3 class="gallery-item-title">Viral Reel Series</h3>
-                <p class="gallery-item-desc">12-part Instagram series, 2M+ views</p>
-                <a href="#" class="gallery-link" aria-label="View Reel Series project">View Project →</a>
+            <article class="gallery-item gallery-video-item reveal" data-category="shorts">
+              <div class="gallery-thumb video-thumb-wrap">
+                <video
+                  class="gallery-video"
+                  preload="metadata"
+                  playsinline
+                >
+                  <source src="assets/videos/editor-reliable.mp4" type="video/mp4" />
+                  <source src="assets/videos/Editor Realaiable.mov" type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-play-overlay" aria-hidden="true">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                  </div>
+                </div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Shorts</span>
+                  <h3 class="gallery-item-title">The Reliable Editor</h3>
+                  <p class="gallery-item-desc">High-retention storytelling, pacing &amp; professional delivery</p>
+                  <button type="button" class="gallery-link play-trigger-link" aria-label="Watch The Reliable Editor">Watch Reel ▶</button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="gallery-item reveal" data-category="documentary">
-            <div class="gallery-thumb">
-              <div class="thumb-placeholder"></div>
-              <div class="gallery-overlay">
-                <span class="gallery-tag">Documentary</span>
-                <h3 class="gallery-item-title">Unseen Karachi</h3>
-                <p class="gallery-item-desc">Short documentary, 22 mins</p>
-                <a href="#" class="gallery-link" aria-label="View Unseen Karachi project">View Project →</a>
+            <article class="gallery-item reveal" data-category="shorts">
+              <div class="gallery-thumb">
+                <div class="thumb-placeholder"></div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Shorts</span>
+                  <h3 class="gallery-item-title">Fitness &amp; Lifestyle Hooks</h3>
+                  <p class="gallery-item-desc">Dynamic typography &amp; retention-focused cuts</p>
+                  <a href="#" class="gallery-link" aria-label="View Fitness project">View Project →</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="gallery-item reveal" data-category="music">
-            <div class="gallery-thumb">
-              <div class="thumb-placeholder"></div>
-              <div class="gallery-overlay">
-                <span class="gallery-tag">Music Video</span>
-                <h3 class="gallery-item-title">Echoes — Official MV</h3>
-                <p class="gallery-item-desc">Cinematic music video, full production</p>
-                <a href="#" class="gallery-link" aria-label="View Echoes project">View Project →</a>
+            <article class="gallery-item reveal" data-category="shorts">
+              <div class="gallery-thumb">
+                <div class="thumb-placeholder"></div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Shorts</span>
+                  <h3 class="gallery-item-title">Product Teaser Reels</h3>
+                  <p class="gallery-item-desc">Vertical cinematic promo edits for brands</p>
+                  <a href="#" class="gallery-link" aria-label="View Product Teaser project">View Project →</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="gallery-item reveal" data-category="commercial">
-            <div class="gallery-thumb">
-              <div class="thumb-placeholder"></div>
-              <div class="gallery-overlay">
-                <span class="gallery-tag">Commercial</span>
-                <h3 class="gallery-item-title">Product Launch — OPPO</h3>
-                <p class="gallery-item-desc">60-second product reveal video</p>
-                <a href="#" class="gallery-link" aria-label="View OPPO project">View Project →</a>
+          </div><!-- /.grid-shorts -->
+        </div><!-- /.gallery-group (shorts) -->
+
+        <!-- Long-Form & Commercials Group (Widescreen 16:9) -->
+        <div class="gallery-group" data-category="long-form">
+          <div class="gallery-group-header reveal">
+            <h3 class="gallery-group-title">Long-Form &amp; Commercials</h3>
+            <span class="gallery-group-count">16:9 Format</span>
+          </div>
+          <div class="gallery-grid grid-longform">
+
+            <article class="gallery-item gallery-video-item reveal" data-category="long-form">
+              <div class="gallery-thumb video-thumb-wrap">
+                <video
+                  class="gallery-video"
+                  preload="metadata"
+                  playsinline
+                >
+                  <source src="assets/videos/new-york.mp4" type="video/mp4" />
+                  <source src="assets/videos/new-york.mov" type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-play-overlay" aria-hidden="true">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                  </div>
+                </div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Long-Form</span>
+                  <h3 class="gallery-item-title">New York</h3>
+                  <p class="gallery-item-desc">Cinematic cityscape, narrative color grade &amp; soundscapes</p>
+                  <button type="button" class="gallery-link play-trigger-link" aria-label="Watch New York">Watch Video ▶</button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="gallery-item reveal" data-category="social">
-            <div class="gallery-thumb">
-              <div class="thumb-placeholder"></div>
-              <div class="gallery-overlay">
-                <span class="gallery-tag">Social Media</span>
-                <h3 class="gallery-item-title">YouTube Channel Rebrand</h3>
-                <p class="gallery-item-desc">Full visual identity + 20 videos</p>
-                <a href="#" class="gallery-link" aria-label="View YouTube Rebrand project">View Project →</a>
+            <article class="gallery-item reveal" data-category="long-form">
+              <div class="gallery-thumb">
+                <div class="thumb-placeholder"></div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Long-Form</span>
+                  <h3 class="gallery-item-title">Brand Campaign — Nike</h3>
+                  <p class="gallery-item-desc">30-second TVC edit for global launch</p>
+                  <a href="#" class="gallery-link" aria-label="View Nike project">View Project →</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-        </div><!-- /.gallery-grid -->
+            <article class="gallery-item reveal" data-category="long-form">
+              <div class="gallery-thumb">
+                <div class="thumb-placeholder"></div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Long-Form</span>
+                  <h3 class="gallery-item-title">Unseen Karachi</h3>
+                  <p class="gallery-item-desc">Short documentary, 22 mins</p>
+                  <a href="#" class="gallery-link" aria-label="View Unseen Karachi project">View Project →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-item reveal" data-category="long-form">
+              <div class="gallery-thumb">
+                <div class="thumb-placeholder"></div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Long-Form</span>
+                  <h3 class="gallery-item-title">Echoes — Official MV</h3>
+                  <p class="gallery-item-desc">Cinematic music video, full production</p>
+                  <a href="#" class="gallery-link" aria-label="View Echoes project">View Project →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-item reveal" data-category="long-form">
+              <div class="gallery-thumb">
+                <div class="thumb-placeholder"></div>
+                <div class="gallery-overlay">
+                  <span class="gallery-tag">Long-Form</span>
+                  <h3 class="gallery-item-title">Product Launch — OPPO</h3>
+                  <p class="gallery-item-desc">60-second product reveal video</p>
+                  <a href="#" class="gallery-link" aria-label="View OPPO project">View Project →</a>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /.grid-longform -->
+        </div><!-- /.gallery-group (long-form) -->
       </div><!-- /.container -->
     </section>
 
