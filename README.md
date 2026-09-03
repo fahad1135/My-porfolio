@@ -90,7 +90,9 @@ My portfolio/
 │       ├── editor-reliable.mp4  # "The Reliable Editor" video reel (Shorts category)
 │       ├── Editor Realaiable.mov # QuickTime source
 │       ├── new-york.mp4         # "New York" widescreen video (Long-Form category)
-│       └── new-york.mov         # QuickTime source
+│       ├── new-york.mov         # QuickTime source
+│       ├── ice-cream-secrets.mp4 # "Ice Cream Secrets" documentary/commercial edit (Long-Form category)
+│       └── Ice cream Secrets.mp4 # Original video source
 ├── css/
 │   ├── style.css                # Core design system, layout, and component styles
 │   └── animations.css           # Keyframe animations, scroll reveals & accessibility overrides
